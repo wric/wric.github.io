@@ -1,34 +1,3 @@
-const heading = Vue.component('heading', {
-  props: ['text'],
-  methods: {
-    splitWords: (s) => (s.split(' '))
-  },
-  template: `
-    <h1 class="w-100 mw7 w5-ns playfair">
-      <div v-for="w in splitWords(text)">{{w}}<br /></div>
-    </h1>
-  `
-})
-
-const entry = Vue.component('entry', {
-  props: ['name', 'url'],
-  template: `
-    <div>
-      <a v-if="url" :href="url" class="link near-black underline-hover dim playfair b ma0 pa0 mb1">{{name}}</a>
-      <p v-else class="playfair b ma0 pa0 mb1">{{name}}</p>
-    </div>
-  `
-})
-
-const description = Vue.component('description', {
-  props: ['desc'],
-  template: `
-    <div>
-      <p class="measure-narrow helvetica ma0 pa0 mb2 f6">{{desc}}</p>	
-    </div>
-  `
-})
-
 const contact = Vue.component('contact', {
   data: () => (
     {
@@ -60,9 +29,9 @@ const contact = Vue.component('contact', {
     this.contact[0].url = 'mailto:' + link
   },
   template: `
-    <div>
-      <span v-for="c in contact" class="measure-narrow helvetica ma0 pa0 mr2 f6">
-        <a class="link near-black underline-hover dim" :href="c.url">{{c.title}}</a>
+    <div class="mv4">
+      <span v-for="c in contact" class="measure-narrow ma2 pa0 f6">
+        <a class="link near-white bg-near-black pv2 ph4 dim" :href="c.url">{{c.title}}</a>
       </span>
     </div>
   `
@@ -70,18 +39,5 @@ const contact = Vue.component('contact', {
 
 const app = new Vue({
   el: '#app',
-  data: {
-    projects: []
-    ,
-    contact: [
-      {'title': 'Email', 'url': ''},
-      {'title': 'Github', 'url': 'https://github.com/wric'}
-    ]
-  },
-  created() {
-    fetch('./projects.json')
-      .then(res => res.json())
-      .then(o => {this.projects = o.projects})
-      .catch(e => console.log(e))
-  }
+  data: {}
 })
