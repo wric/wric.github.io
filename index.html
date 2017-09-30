@@ -4,25 +4,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8"/>
   <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900" rel="stylesheet"> 
-  <style>
-    .playfair {
-      font-family: 'Playfair Display', serif;
-    }
-  </style>
   <body>
-    <div id="app" class="dt mw6 center pt0 pb5 pv5-m pv6-ns near-black">
-      <div class="db dtc-ns v-mid-ns">
-        <heading text="Richard Westberg"></heading>
-      </div>
-      <div class="db dtc-ns v-mid ph2 pr0-ns pl3-ns">
-         <div v-for="p in projects"> 
-            <entry :name="p.name" :url="p.url"></entry>
-            <description :desc="p.description"></description>
-         </div> 
-        <entry name="Contact"></entry>
-        <contact></contact>
-      </div>
+    <div id="app">
+      <article class="vh-100 dt w-100 white avenir">
+        <div class="dtc v-mid tc near-black ph3 ph4-l mw2">
+          <h1 class="f1 fw1 tc">Hello there!</h1>
+          <contact></contact>
+        </div>
+      </article>
     </div>
 
   <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
